@@ -1,0 +1,439 @@
+/* Importing font-faces */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap");
+
+:root {
+  /* Colors variables */
+
+  --cl-teal: 177, 68%, 64%;
+  --cl-rust: 12, 94%, 65%;
+  --cl-orange: 33, 100%, 70%;
+  --cl-white: 20, 33%, 98%;
+  --cl-black: 244, 23%, 12%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  overflow-x: hidden;
+}
+.bg-image::before {
+  content: "";
+  width: 800px;
+  height: 1000px;
+  position: absolute;
+  background: url(/assets/bg-main-mobile.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: -350px;
+  left: 50%;
+  transform: translatex(-25%);
+}
+
+.app-wrapper {
+  width: 375px;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+header,
+main,
+footer {
+  margin-left: 24px;
+  margin-right: min(24px);
+}
+
+.logo {
+  width: 147px;
+  margin-bottom: 68px;
+}
+
+main {
+  margin-bottom: 170px;
+}
+
+.main-header {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.45px;
+  line-height: 48px;
+  padding-bottom: 20px;
+}
+
+.main-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.plan-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background: url(/assets/bg-pattern-2.svg), black;
+  background-size: 280px 420px, 375px 600px;
+  background-position: top center, top center;
+  background-repeat: no-repeat, no-repeat;
+  border-radius: 12px;
+
+  margin: 0 auto;
+  margin-bottom: 390px;
+}
+
+.device-container {
+  position: absolute;
+  width: 209px;
+  height: 430px;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.device-container img {
+  width: 100%;
+}
+
+.price-card {
+  position: absolute;
+  top: 400px;
+  width: 375px;
+  background: hsla(var(--cl-rust), 1);
+  color: hsla(var(--cl-white), 1);
+  border-radius: 12px;
+  padding: 36px;
+}
+
+.plan-header {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  padding-bottom: 12px;
+}
+
+.plan-description {
+  font-size: 18px;
+  line-height: 28px;
+  padding-bottom: 36px;
+}
+
+.price-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  font-size: 65px;
+  font-weight: 700;
+  line-height: 52px;
+  padding-left: 20px;
+}
+
+.price-tag span {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 32px 10px 10px 10px;
+}
+
+.cta-button {
+  border: 0;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 1em 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25em;
+  border-radius: 12px;
+  box-shadow: 3px 3px 10px 0px hsla(var(--cl-black), 0.3);
+
+  cursor: pointer;
+}
+
+.cta-icon {
+  height: 18px;
+}
+
+.android-cta {
+  background: hsla(var(--cl-white), 1);
+  color: hsla(var(--cl-black), 1);
+}
+
+.ios-cta {
+  background: hsla(var(--cl-black), 1);
+  color: hsla(var(--cl-white), 1);
+}
+
+.android-cta:hover {
+  background: hsla(var(--cl-orange), 1);
+}
+
+.ios-cta:hover {
+  background: hsla(var(--cl-teal), 1);
+}
+
+.android-cta:active {
+  background: hsla(var(--cl-orange), 1);
+  box-shadow: 3px 3px 10px 0px hsla(var(--cl-black), 0.3) inset;
+}
+
+.ios-cta:active {
+  background: hsla(var(--cl-teal), 1);
+  box-shadow: 3px 3px 10px 0px hsla(var(--cl-black), 0.3) inset;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contact a {
+  color: hsla(var(--black), 1);
+}
+
+.social {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.social-icon {
+  width: 20px;
+}
+
+.social-icon:hover {
+  filter: invert(74%) sepia(57%) saturate(5327%) hue-rotate(327deg)
+    brightness(103%) contrast(96%);
+}
+
+@media screen and (min-width: 768px) {
+  .bg-image::before {
+    content: "";
+    width: 1200px;
+    height: 1100px;
+    position: absolute;
+    background: url(/assets/bg-main-tablet.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: -250px;
+    left: 50%;
+    transform: translatex(-60%);
+  }
+
+  .bg-image::after {
+    content: "";
+    width: 265px;
+    height: 400px;
+    position: absolute;
+    background: url(/assets/bg-pattern-1.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 50;
+    top: -32px;
+    left: 50%;
+    transform: translatex(57%);
+  }
+
+  .logo {
+    margin-bottom: 95px;
+  }
+
+  .app-wrapper {
+    width: 768px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
+
+  header,
+  main,
+  footer {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  main {
+    width: 520px;
+    margin-bottom: 240px;
+    position: relative;
+  }
+
+  .main-header {
+    font-size: 64px;
+    line-height: 64px;
+    letter-spacing: -0.73px;
+    padding-bottom: 28px;
+  }
+
+  .main-text {
+    font-size: 18px;
+    width: 514px;
+    line-height: 28px;
+  }
+
+  .plan-container {
+    margin-bottom: 195px;
+  }
+
+  .device-container {
+    transform: none;
+    width: 270px;
+    height: 556px;
+    top: -140px;
+    left: 65px;
+  }
+
+  .price-card {
+    top: 150px;
+    right: 60px;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .logo-footer-container {
+    width: 100%;
+  }
+
+  .contact {
+    width: 400px;
+  }
+
+  .social {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .bg-image::before {
+    content: "";
+    width: 2000px;
+    height: 1800px;
+    position: absolute;
+    background: url(/assets/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: -250px;
+    left: 50%;
+    transform: translatex(-40%);
+  }
+
+  .bg-image::after {
+    content: "";
+    width: 265px;
+    height: 400px;
+    position: absolute;
+    background: url(/assets/bg-pattern-1.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 50;
+    top: -32px;
+    left: 100%;
+    transform: translatex(-127%);
+  }
+
+  .logo {
+    margin-bottom: 95px;
+  }
+
+  .app-wrapper {
+    width: 1440px;
+    margin: 0 auto;
+    padding: 60px 135px;
+  }
+
+  header,
+  main,
+  footer {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  main {
+    width: 850px;
+    margin-bottom: 240px;
+    position: relative;
+  }
+
+  .main-header {
+    font-size: 88px;
+    line-height: 88px;
+    letter-spacing: -1px;
+    padding-bottom: 40px;
+  }
+
+  .main-text {
+    font-size: 20px;
+    width: 825px;
+    line-height: 34px;
+    letter-spacing: 0;
+    padding-bottom: 80px;
+  }
+
+  .plan-container {
+    background-size: 312px 468px;
+    background-position: 400px -40px;
+    margin-bottom: 200px;
+  }
+
+  .device-container {
+    transform: none;
+    width: 312px;
+    height: 642px;
+    top: -215px;
+    left: 100px;
+  }
+
+  .price-card {
+    width: 445px;
+    top: 90px;
+    right: 95px;
+    padding: 54px;
+  }
+
+  .plan-description {
+    font-size: 20px;
+    line-height: 34px;
+    width: 333px;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
+  .logo-footer-container {
+    width: 250px;
+  }
+
+  .social {
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+}
